@@ -1,0 +1,109 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMlMi8OIfOy24ICfClmXkbs",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Abhimishra789/Mission-DSA/blob/main/genrative%20Ai%20Ex-2\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "J5GEmKXTcQMl",
+        "outputId": "9815b1d0-c8c3-4c62-c9d4-6f5fe8565353"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "[nltk_data] Downloading package punkt to /root/nltk_data...\n",
+            "[nltk_data]   Unzipping tokenizers/punkt.zip.\n",
+            "[nltk_data] Downloading package stopwords to /root/nltk_data...\n",
+            "[nltk_data]   Unzipping corpora/stopwords.zip.\n",
+            "[nltk_data] Downloading package punkt_tab to /root/nltk_data...\n",
+            "[nltk_data]   Unzipping tokenizers/punkt_tab.zip.\n"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            "my name is abhishek mishra and i am pursuing graduation in ece\n",
+            "\n",
+            "['my', 'name', 'is', 'abhishek', 'mishra', 'and', 'i', 'am', 'pursuing', 'graduation', 'in', 'ece']\n",
+            "['my', 'name', 'is', 'abhishek', 'mishra', 'and', 'i', 'am', 'pursuing', 'graduation', 'in', 'ece']\n",
+            "['name', 'abhishek', 'mishra', 'pursuing', 'graduation', 'ece']\n",
+            "['abhishek', 'ece', 'graduation', 'mishra', 'name', 'pursuing']\n",
+            "Vocabulary saved to vocabulary.json\n"
+          ]
+        }
+      ],
+      "source": [
+        "import nltk\n",
+        "import json\n",
+        "import string\n",
+        "\n",
+        "from nltk.corpus import stopwords\n",
+        "from nltk.tokenize import word_tokenize\n",
+        "\n",
+        "nltk.download('punkt')\n",
+        "nltk.download('stopwords')\n",
+        "\n",
+        "text = \"\"\"\n",
+        "my name is abhishek mishra and i am pursuing graduation in ECE\n",
+        "\"\"\"\n",
+        "\n",
+        "corpus = text.lower()\n",
+        "print(corpus)\n",
+        "\n",
+        "nltk.download('punkt_tab')\n",
+        "tokens = word_tokenize(corpus)\n",
+        "print(tokens)\n",
+        "\n",
+        "tokens = [word for word in tokens if word not in string.punctuation]\n",
+        "print(tokens)\n",
+        "\n",
+        "stop_words = set(stopwords.words('english'))\n",
+        "\n",
+        "clean_tokens = [word for word in tokens if word not in stop_words]\n",
+        "print(clean_tokens)\n",
+        "\n",
+        "vocabulary = sorted(set(clean_tokens))\n",
+        "print(vocabulary)\n",
+        "\n",
+        "vocab_dict = {\"vocabulary\": vocabulary}\n",
+        "\n",
+        "with open(\"vocabulary.json\", \"w\") as file:\n",
+        "    json.dump(vocab_dict, file, indent=4)\n",
+        "\n",
+        "    print(\"Vocabulary saved to vocabulary.json\")"
+      ]
+    }
+  ]
+}
