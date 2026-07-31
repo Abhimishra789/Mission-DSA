@@ -1,0 +1,22 @@
+[
+  {"name":"India","capital":"New Delhi","population":"142.86 Cr","flag":"https://flagcdn.com/w320/in.png","coords":"540,280,580,320"},
+  {"name":"United States","capital":"Washington D.C.","population":"33.9 Cr","flag":"https://flagcdn.com/w320/us.png","coords":"120,200,200,260"},
+  {"name":"China","capital":"Beijing","population":"141.7 Cr","flag":"https://flagcdn.com/w320/cn.png","coords":"680,250,740,300"},
+  {"name":"Russia","capital":"Moscow","population":"14.4 Cr","flag":"https://flagcdn.com/w320/ru.png","coords":"600,120,800,200"},
+  {"name":"Brazil","capital":"Brasilia","population":"21.6 Cr","flag":"https://flagcdn.com/w320/br.png","coords":"250,380,320,450"},
+  {"name":"Japan","capital":"Tokyo","population":"12.3 Cr","flag":"https://flagcdn.com/w320/jp.png","coords":"780,250,810,280"},
+  {"name":"Germany","capital":"Berlin","population":"8.3 Cr","flag":"https://flagcdn.com/w320/de.png","coords":"480,180,520,210"},
+  {"name":"France","capital":"Paris","population":"6.7 Cr","flag":"https://flagcdn.com/w320/fr.png","coords":"450,190,480,220"},
+  {"name":"UK","capital":"London","population":"6.7 Cr","flag":"https://flagcdn.com/w320/gb.png","coords":"440,170,470,200"},
+  {"name":"Canada","capital":"Ottawa","population":"3.8 Cr","flag":"https://flagcdn.com/w320/ca.png","coords":"100,150,180,200"},
+  {"name":"Australia","capital":"Canberra","population":"2.6 Cr","flag":"https://flagcdn.com/w320/au.png","coords":"760,420,820,470"},
+  {"name":"Italy","capital":"Rome","population":"5.8 Cr","flag":"https://flagcdn.com/w320/it.png","coords":"470,210,500,240"},
+  {"name":"Spain","capital":"Madrid","population":"4.7 Cr","flag":"https://flagcdn.com/w320/es.png","coords":"430,210,460,240"},
+  {"name":"Mexico","capital":"Mexico City","population":"12.8 Cr","flag":"https://flagcdn.com/w320/mx.png","coords":"90,240,140,280"},
+  {"name":"South Korea","capital":"Seoul","population":"5.1 Cr","flag":"https://flagcdn.com/w320/kr.png","coords":"750,250,780,280"},
+  {"name":"Saudi Arabia","capital":"Riyadh","population":"3.5 Cr","flag":"https://flagcdn.com/w320/sa.png","coords":"580,290,640,330"},
+  {"name":"Turkey","capital":"Ankara","population":"8.5 Cr","flag":"https://flagcdn.com/w320/tr.png","coords":"540,230,580,260"},
+  {"name":"Egypt","capital":"Cairo","population":"10.9 Cr","flag":"https://flagcdn.com/w320/eg.png","coords":"520,280,560,310"},
+  {"name":"South Africa","capital":"Pretoria","population":"6.0 Cr","flag":"https://flagcdn.com/w320/za.png","coords":"500,410,540,450"},
+  {"name":"Nigeria","capital":"Abuja","population":"22.3 Cr","flag":"https://flagcdn.com/w320/ng.png","coords":"470,320,510,350"}
+]

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smart Interactive Geo-Map - Abhishek PSIT</title>
+<style>
+  body { font-family: Arial; background:#f0f4f8; text-align:center; }
+  h1 { color:#2c3e50; }
+  #map { width: 90%; max-width: 1000px; margin: 20px auto; position: relative; }
+  #map img { width:100%; cursor:pointer; }
+  #info { background:white; padding:20px; border-radius:10px; margin:20px auto; width:300px; box-shadow:0 4px 8px rgba(0,0,0,0.2); }
+  #info img { width:100px; }
+  button { padding:10px 20px; margin:5px; border:none; background:#3498db; color:white; border-radius:5px; cursor:pointer; }
+  button:hover { background:#2980b9; }
+</style>
+</head>
+<body>
+
+<h1>🌍 Smart Interactive Geo-Map</h1>
+<h3>PSIT - Abhishek</h3>
+
+<div id="map">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" usemap="#worldmap" id="worldImg">
+  <map name="worldmap" id="worldmap"></map>
+</div>
+
+<div id="info">
+  <h2>Click on any Country</h2>
+  <p>Information will appear here</p>
+</div>
+
+<button onclick="speak('Hello')">Test Speaker</button>
+<button onclick="toggleLang()">Hindi / English</button>
+
+<script>
+let lang = "en";
+let countriesData = {};
+
+// Load JSON
+fetch('countries.json')
+.then(res => res.json())
+.then(data => {
+  countriesData = data;
+  createMapAreas();
+});
+
+function createMapAreas(){
+  const map = document.getElementById('worldmap');
+  countriesData.forEach(c => {
+    let area = document.createElement('area');
+    area.shape = "rect";
+    area.coords = c.coords; // x1,y1,x2,y2
+    area.alt = c.name;
+    area.onclick = () => showInfo(c.name);
+    map.appendChild(area);
+  });
+}
+
+function showInfo(name){
+  let c = countriesData.find(x => x.name === name);
+  document.getElementById('info').innerHTML = `
+    <img src="${c.flag}" alt="flag">
+    <h2>${c.name}</h2>
+    <p><b>Capital:</b> ${c.capital}</p>
+    <p><b>Population:</b> ${c.population}</p>
+  `;
+  speak(`${c.name}. Capital: ${c.capital}`);
+}
+
+function speak(text){
+  let msg = new SpeechSynthesisUtterance(text);
+  msg.lang = lang === "en" ? "en-US" : "hi-IN";
+  window.speechSynthesis.speak(msg);
+}
+
+function toggleLang(){
+  lang = lang === "en" ? "hi" : "en";
+  alert("Language: " + (lang==="en"?"English":"Hindi"));
+}
+</script>
+
+</body>
+</html>
